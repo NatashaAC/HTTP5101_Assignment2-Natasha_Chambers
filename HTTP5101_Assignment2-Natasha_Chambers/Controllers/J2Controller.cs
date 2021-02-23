@@ -17,10 +17,12 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
          */
 
         /// <summary>
-        /// 
+        /// Will check the spelling of an American word
+        /// and covert it to the Canadian spelling if its over four letters long
+        /// and ends in "or", if not then it will output the original word
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
+        /// <param name="word"> a word </param>
+        /// <returns> a word that is either Canadian spelling or American </returns>
 
         [HttpGet]
         [Route("api/J2/AmeriCanadianChecker/{word}")]
