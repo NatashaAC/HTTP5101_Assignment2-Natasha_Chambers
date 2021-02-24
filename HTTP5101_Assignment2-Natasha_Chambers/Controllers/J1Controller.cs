@@ -12,14 +12,13 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
         /* J1 2008 Problem - Body Mass Index 
          * Objective:
          * Calculate the BMI of a patient based on their height in metres and weight in kilograms. 
-         * Then displays a message telling the patient that they are overweight, 
+         * Then display a message telling the patient that they are overweight, 
          * normal weight or underweight. 
         */
 
         /// <summary>
-        ///     Returns health condition of a patient which is overweight, normal weight, or 
-        ///     underweight based on their BMI calculated by their input of weight in kilograms
-        ///     and height in metres
+        /// Calculates a patient's BMI based on their weight (kilograms) and their height (metres).
+        /// Then returns a message with their BMI and weight category (overweight, normal weight, underweight)
         /// </summary>
         /// <param name="weight"> decimal value of a patient's weight </param>
         /// <param name="height"> decimal value of a patient's height </param>
@@ -69,7 +68,7 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
                 }
             }
 
-            // Message that stores the bmi calculation and category
+            // Message that stores the bmi calculation rounded to two decimal places and BMI category
             string message = "The patient's BMI is " + Math.Round(bmi, 2) + ". According to the table, the patient is " + category;
 
             return message;
