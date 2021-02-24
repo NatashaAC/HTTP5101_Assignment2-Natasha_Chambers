@@ -23,20 +23,32 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
         /// </summary>
         /// <param name="word"> a word </param>
         /// <returns> a word that is either Canadian spelling or American </returns>
-
+        /// <example>
+        ///     GET api/J2/AmeriCanadianChecker/color ->
+        ///     "American Spelling: color. Canadian Spelling: colour."
+        /// </example>
+        ///     GET api/J2/AmeriCanadianChecker/for ->
+        ///     "American Spelling: for. Canadian Spelling: for."
+        /// <example>
+        ///     GET api/J2/AmeriCanadianChecker/taylor ->
+        ///     "American Spelling: taylor. Canadian Spelling: taylour."
+        /// </example>
         [HttpGet]
         [Route("api/J2/AmeriCanadianChecker/{word}")]
         public string AmeriCanadianChecker(string word)
         {
             string message = "";
 
-            if(word.Length < 4)
+            if(word.Length < 4 && word.EndsWith("or"))
             {
-                message = "American spelling " + word;
+                message = "American Spelling: " + word + " Canadian Spelling: " + word;
 
-            } else if (word.Length > 4)
+            } else if (word.Length > 4 && word.EndsWith("or"))
             {
-                message = "Canadian Spelling ";
+                message = "American Spelling: " + word + " Canadian Spelling: " + word.Insert(4, "u");
+            } else
+            {
+                message = "The Canadian spelling is the same as the American spelling.";
             }
 
             return message;
