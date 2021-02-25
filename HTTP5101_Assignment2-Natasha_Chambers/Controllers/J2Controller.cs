@@ -33,19 +33,24 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
         ///     GET api/J2/AmeriCanadianChecker/taylor ->
         ///     "American Spelling: taylor. Canadian Spelling: taylour."
         /// </example>
+        /// <example>
+        ///     GET api/J2/AmeriCanadianChecker/container ->
+        ///     "The Canadian spelling is the same as the American spelling."
+        /// </example>
         [HttpGet]
         [Route("api/J2/AmeriCanadianChecker/{word}")]
         public string AmeriCanadianChecker(string word)
         {
             string message = "";
 
-            if(word.Length < 4 && word.EndsWith("or"))
+            // Logic to determine whether the word needs to be converted
+            if (word.Length < 4 && word.EndsWith("or"))
             {
                 message = "American Spelling: " + word + " Canadian Spelling: " + word;
 
             } else if (word.Length > 4 && word.EndsWith("or"))
             {
-                message = "American Spelling: " + word + " Canadian Spelling: " + word.Insert(4, "u");
+                message = "American Spelling: " + word + " Canadian Spelling: " + word.Replace("or", "our");
             } else
             {
                 message = "The Canadian spelling is the same as the American spelling.";
