@@ -12,8 +12,7 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
         /* J1 2008 Problem - Body Mass Index 
          * Objective:
          * Calculate the BMI of a patient based on their height in metres and weight in kilograms. 
-         * Then display a message telling the patient that they are overweight, 
-         * normal weight or underweight. 
+         * Then display a message telling the patient that they are overweight, normal weight or underweight. 
         */
 
         /// <summary>
@@ -25,15 +24,15 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
         /// <returns> A sentence describing the BMI of a patient </returns>
         /// <example> 
         ///     GET api/J1/BMICalculator/69/1.73/ -> 
-        ///     "The patient's BMI is . According to the table, the patient is Normal weight"
+        ///     "The patient's BMI is 23.05. According to the table, the patient is Normal weight"
         /// </example>
         /// <example> 
         ///     GET api/J1/BMICalculator/84.5/1.8/ -> 
-        ///     "The patient's BMI is . According to the table, the patient is Overweight"
+        ///     "The patient's BMI is 26.08. According to the table, the patient is Overweight"
         /// </example>
         /// <example> 
         ///     GET api/J1/BMICalculator/45/1.65/ -> Underweight 
-        ///     "The patient's BMI is . According to the table, the patient is Underweight"
+        ///     "The patient's BMI is 16.53. According to the table, the patient is Underweight"
         /// </example>
         /// <example> 
         ///     GET api/J1/BMICalculator/-78/1.40/ -> "Unable to calculate BMI"
@@ -53,7 +52,7 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
                 return "Unable to calculate BMI";
             } else
             {
-                // Logic to determine what category the patient is in
+                // Logic to determine what category the patient is in 
                 if (bmi > 25)
                 {
                     category = "Overweight";

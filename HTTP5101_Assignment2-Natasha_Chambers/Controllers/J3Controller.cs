@@ -14,8 +14,16 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
          * Award points to a player based on the 13 cards they have in their hand. 
          * If they have an ace, king, queen, or jack then the player will receive points, 
          * the player will also recieve points if they have a void, singleton or doubleton.
-         */
+        */
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cards"> a string representing a player's hand </param>
+        /// <returns></returns>
+
+        [HttpGet]
+        [Route("api/J3/KeepScore/{cards}")]
         public string KeepScore(string cards)
         {
             // Variables for points basedd on certain card values
