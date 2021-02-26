@@ -17,10 +17,28 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
         */
 
         /// <summary>
-        /// 
+        /// Award points to a player based on the 13 cards they have in their hand. 
+        /// If they have an ace, king, queen, or jack then the player will receive points,
+        /// the player will also recieve points if they have a void, singleton or doubleton.
         /// </summary>
         /// <param name="cards"> a string representing a player's hand </param>
-        /// <returns></returns>
+        /// <returns> cards in players hand sorted by suit, points awarded by each suit, and the total amount of points </returns>
+        /// <example>
+        ///     GET api/J3/KeepScore/C258TJKD69QAHSTJA ->
+        ///     Clubs 2 5 8 T J K    Points 4
+        ///     Diamonds 6 9 Q A     Points 6
+        ///     Hearts               Points 3
+        ///     Spades T J A         Points 5
+        ///                          Total  18
+        /// </example>
+        /// <example>
+        ///     GET api/J3/KeepScore/CAD578KAHAS47TQKA ->
+        ///     Clubs A                Points 6
+        ///     Diamonds 5 7 8 K A     Points 7
+        ///     Hearts A               Points 6
+        ///     Spades 4 7 T Q K A     Points 9
+        ///                            Total  28
+        /// </example>
 
         [HttpGet]
         [Route("api/J3/KeepScore/{cards}")]

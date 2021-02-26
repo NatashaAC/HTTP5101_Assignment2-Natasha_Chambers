@@ -18,11 +18,11 @@ namespace HTTP5101_Assignment2_Natasha_Chambers.Controllers
 
         /// <summary>
         /// Will check the spelling of an American word
-        /// and covert it to the Canadian spelling if its over four letters long
+        /// and convert it to the Canadian spelling if its over four letters long
         /// and ends in "or", if not then it will output the original word
         /// </summary>
         /// <param name="word"> a word </param>
-        /// <returns> a word that is either Canadian spelling or American </returns>
+        /// <returns> a sentence containing the user's word with the Canadian and American spelling </returns>
         /// <example>
         ///     GET api/J2/AmeriCanadianChecker/color ->
         ///     "American Spelling: color. Canadian Spelling: colour."
