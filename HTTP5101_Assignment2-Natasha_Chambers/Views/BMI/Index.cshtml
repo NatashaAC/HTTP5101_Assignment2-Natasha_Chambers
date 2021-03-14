@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Body Mass Index (BMI) Calculator</h2>
+<p>Enter your weight in kilograms (kg) and height in meters (m).</p>
+
+<form action="/BMI/Show" method="post">
+    <div style="margin: 20px 0">
+        <label for="weight">Weight (kg)</label>
+        <input id="weight" type="number" name="weight" />
+    </div>
+
+    <div style="margin: 20px 0">
+        <label for="height">Height (m)</label>
+        <input id="height" type="text" name="height" />
+    </div>
+
+    <input type="submit" value="Calculate BMI"/>
+</form>
